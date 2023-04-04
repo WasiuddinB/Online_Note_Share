@@ -1,0 +1,29 @@
+Tasks:
+----------------------------------------------------------------------
+1)
+SELECT COUNT(employee_id)
+FROM employees
+HAVING salary != MAX(salary) AND salary!=MIN(salary) AND hire_date<1999
+
+2)
+SELECT first_name,job_title
+FROM employees LEFT JOIN jobs
+ON employees.job_id is not null
+ORDER BY employees.salary DESC
+
+3)
+SELECT MIN(salary),department_name
+FROM employees LEFT JOIN departments
+ON salary is not null
+HAVING SUM(employees.salary) >7000
+
+4)
+SELECT COUNT(country_id),region_name
+FROM countries LEFT JOIN regions
+ON countries.region_id is NOT null
+
+5)
+SELECT first_name,department_name
+FROM employees LEFT JOIN departments
+ON salary>5000
+HAVING salary>AVG(salary)
